@@ -1,0 +1,35 @@
+<form>
+    <div class="form-group">
+      <label for="appartNum">Apartment Number:</label>
+      <input type="number" class="form-control" id="appartNum" name="appartNum" [(ngModel)]="apartment.appartNum" required>
+    </div>
+    <div class="form-group">
+      <label for="floorNum">Floor Number:</label>
+      <input type="number" class="form-control" id="floorNum" name="floorNum" [(ngModel)]="apartment.floorNum" required>
+    </div>
+    <div class="form-group">
+      <label for="surface">Surface:</label>
+      <input type="number" class="form-control" id="surface" name="surface" [(ngModel)]="apartment.surface" required>
+    </div>
+    <div class="form-group">
+      <label for="terrace">Terrace:</label>
+      <select class="form-control" id="terrace" name="terrace" [(ngModel)]="apartment.terrace" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="form-group" *ngIf="apartment.terrace === 'Yes'">
+      <label for="surfaceTerrace">Surface of Terrace:</label>
+      <input type="number" class="form-control" id="surfaceTerrace" name="surfaceTerrace" [(ngModel)]="apartment.surfaceTerrace" required>
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input type="text" class="form-control" id="category" name="category" [(ngModel)]="apartment.category" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="apartment.description" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
